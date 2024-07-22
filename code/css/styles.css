@@ -329,8 +329,10 @@ button {
 .dropdown-w .dropdown-menu {
   border: none;
   border-radius: 0px 0px 23px 23px;
+  margin: 0;
 }
-.dropdown-w:hover .btn.btn-dropdown {
+.dropdown-w:hover .btn.btn-dropdown,
+.dropdown-w .btn.btn-dropdown.show {
   border-radius: 23px 23px 0px 0px;
 }
 .dropdown-w label {
@@ -1030,7 +1032,8 @@ textarea.form-control {
 .navbar-nav .dropdown[data-bs-hover] {
   position: relative;
 }
-.navbar-nav .dropdown[data-bs-hover] .nav-link.dropdown-toggle:after {
+.navbar-nav .dropdown[data-bs-hover] .nav-link.dropdown-toggle:after,
+.navbar-nav .dropdown[data-bs-hover] .nav-link.dropdown-toggle svg {
   display: none;
 }
 .navbar-nav .dropdown[data-bs-hover] .dropdown-menu {
@@ -1803,6 +1806,15 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
 }
+.denteam-card .form-wrapper .wpcf7 {
+  height: 100%;
+}
+.denteam-card .form-wrapper .wpcf7-response-output {
+  margin: 20px 0 50px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: red;
+}
 .denteam-card .form-wrapper form {
   display: flex;
   flex-direction: column;
@@ -1844,11 +1856,41 @@ textarea.form-control {
   padding: 21px 0 4px;
   font-size: 18px;
 }
+.denteam-card .form-step .form-control {
+  border: none;
+}
+.denteam-card .form-step .wpcf7-list-item input[type="checkbox"] {
+  --bs-border-color: #545454;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: transparent;
+  background-image: var(--bs-form-check-bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  print-color-adjust: exact;
+}
+.denteam-card .form-step .wpcf7-list-item input[type="checkbox"]:checked {
+  --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23545454' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
 .denteam-card .form-step .check-item .form-check-input {
   background-color: transparent;
   border-color: #fff;
   margin-right: 8px;
 }
+.denteam-card .form-step .wpcf7-list-item {
+  margin: 0;
+}
+
 .denteam-card .form-step .check-item a {
   color: #fff;
   text-decoration: underline;
@@ -2128,6 +2170,15 @@ textarea.form-control {
 }
 .cards-slider .swiper-pagination {
   margin: 29px 0 0;
+}
+.cards-slider .swiper-slide {
+  height: auto;
+}
+.cards-slider .swiper-slide .card {
+  height: 100%;
+}
+.cards-slider .swiper-slide .card a {
+  text-decoration: none;
 }
 
 .cards-list-02 {
@@ -2755,6 +2806,14 @@ textarea.form-control {
   width: 40px;
   height: 40px;
   margin-right: 10px;
+  background-color: var(--bs-primary);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bs-white);
+  font-size: 18px;
+  line-height: 1;
 }
 .contacts-box .contacts-list a .icon img {
   display: block;

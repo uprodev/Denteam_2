@@ -290,8 +290,9 @@ jQuery(document).ready(function ($) {
 
   if (document.querySelector(".scroll-bottom")) {
     document.querySelector(".scroll-bottom").addEventListener("click", function () {
-      var nextSection = document.querySelector(".page-banner").nextElementSibling;
-      lenis.scrollTo(nextSection, { offset: -185, duration: 2 });
+      // var nextSection = document.querySelector(".page-banner").nextElementSibling;
+      var nextSection = document.querySelector(this.dataset.section);
+      lenis.scrollTo(nextSection, { offset: 0, duration: 2 });
     });
   }
   // forms
@@ -320,16 +321,17 @@ jQuery(document).ready(function ($) {
 
   // form steps
   function changeFormStep(current, next) {
-    $(".contact-info-form-section .form-wrapper").attr("data-step", next);
+    $(".denteam-card .form-wrapper").attr("data-step", next);
     $("#formStepInd").attr("data-step", next);
   }
   $(".denteam-card .btn-form-next").on("click", function () {
-    const current = parseInt($(".contact-info-form-section .form-wrapper").attr("data-step"));
+    const current = parseInt($(".denteam-card .form-wrapper").attr("data-step"));
+    console.log($(".denteam-card .form-wrapper").attr("data-step"), current);
     const next = current + 1;
     changeFormStep(current, next);
   });
   $(".denteam-card .btn-form-prev").on("click", function () {
-    const current = parseInt($(".contact-info-form-section .form-wrapper").attr("data-step"));
+    const current = parseInt($(".denteam-card .form-wrapper").attr("data-step"));
     const next = current - 1;
     changeFormStep(current, next);
   });
