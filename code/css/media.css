@@ -356,7 +356,7 @@
   .denteam-card {
     margin: 0 -30px;
   }
-  .contact-cards .container-fluid:before {
+  .contact-cards .contact-cards-wrapper .container-fluid:before {
     right: 30px;
   }
 }
@@ -817,7 +817,7 @@
     height: 100%;
     margin: 0;
   }
-  .contact-cards .container-fluid:before {
+  .contact-cards .contact-cards-wrapper .container-fluid:before {
     right: 100px;
     left: 100px;
     top: 50px;
@@ -1514,10 +1514,6 @@
     background-image: url(../img/bgi/DT_Triangle_01_header.svg), url(../img/bgi/DT_Triangle_02_header.svg), linear-gradient(to right, rgb(244, 240, 234) 0%, rgba(244, 240, 234, 0.9) 40%, rgba(244, 240, 234, 0) 100%);
     background-size: auto;
     background-position: 0 0, 160px 0, 0 0;
-  }
-
-  .contact-cards {
-    margin: 21px 0 70px;
   }
 
   .links-grid .wrapper {
@@ -2282,10 +2278,14 @@
     max-width: 29em;
   }
 
-  .contact-cards .container-fluid > div {
+  .contact-cards {
+    padding: 21px 0 98px;
+    margin: 0 0 70px;
+  }
+  .contact-cards .contact-cards-wrapper .container-fluid > div {
     position: static;
   }
-  .contact-cards .container-fluid::before {
+  .contact-cards .contact-cards-wrapper .container-fluid::before {
     right: 110px;
     left: 135px;
     top: 20px;
@@ -2296,7 +2296,7 @@
   }
 
   .text-columns {
-    padding: 50px 0 98px;
+    padding: 120px 0 0;
   }
 
   .list-cards-icons {
@@ -2538,10 +2538,13 @@
   }
   .bg-bot-white:after {
     height: 365px;
-  }
-  .bg-bot-white:after {
     bottom: -300px;
   }
+
+  .contact-cards:before {
+    height: 70px;
+  }
+
   .container-fluid > div {
     position: relative;
     z-index: 1;

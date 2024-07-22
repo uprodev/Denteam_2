@@ -191,10 +191,21 @@ button {
   background-color: #fff;
   height: 200px;
 }
-.bg-top-white:before {
+.bg-top-light:before,
+.bg-bot-light:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: var(--bs-light);
+  height: 200px;
+}
+.bg-top-white:before,
+.bg-top-light:before {
   top: 0;
 }
-.bg-bot-white:after {
+.bg-bot-white:after,
+.bg-bot-light:after {
   bottom: -100px;
 }
 .bg-bot-white.pb-0:after {
@@ -2958,12 +2969,36 @@ textarea.form-control {
 /* contact-cards */
 .contact-cards {
   position: relative;
+  padding: 0 0 50px;
   margin: 0 0 50px;
 }
-.contact-cards .container-fluid {
+.contact-cards:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.contact-cards:before {
+  height: 100px;
+}
+
+.contact-cards.bg-top-white:before {
+  background: var(--bs-white);
+}
+.contact-cards.bg-top-light:before {
+  background: var(--bs-light);
+}
+.contact-cards.bg-bot-white:after {
+  background: var(--bs-white);
+}
+.contact-cards.bg-bot-light:after {
+  background: var(--bs-light);
+}
+.contact-cards .contact-cards-wrapper .container-fluid {
   position: relative;
 }
-.contact-cards .container-fluid:before {
+.contact-cards .contact-cards-wrapper .container-fluid:before {
   content: "";
   position: absolute;
   right: 15px;
@@ -2999,27 +3034,17 @@ textarea.form-control {
   display: block;
   margin: 0 0 14px;
 }
-.contact-cards .row > div:last-child .contact-card {
+.contact-cards .contact-cards-wrapper .row > div:last-child .contact-card {
   margin: 0;
 }
-.contact-cards .row > div:last-child a span {
+.contact-cards .contact-cards-wrapper .row > div:last-child a span {
   text-decoration: underline;
 }
 
 /* text-columns */
 .text-columns {
   position: relative;
-  padding: 50px 0;
-}
-.text-columns:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100%;
-  background-color: var(--bs-light);
-  height: 234px;
-  z-index: -1;
+  padding: 100px 0 0;
 }
 .text-columns h3 {
   color: var(--bs-primary);
