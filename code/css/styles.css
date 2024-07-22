@@ -2870,16 +2870,52 @@ textarea.form-control {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   row-gap: 19px;
   column-gap: 28px;
   justify-content: center;
   margin: 0 auto;
   max-width: 250px;
 }
-.contacts-box .socials img {
-  display: block;
-  width: 100%;
-  height: auto;
+.contacts-box .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 0 4px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+.contacts-box .socials .linkedin {
+  width: 83px;
+  height: 86px;
+  background-image: url(../img/icons/socials-01-li.svg);
+  font-size: 30px;
+  padding-right: 5px;
+}
+.contacts-box .socials .instagram {
+  width: 99px;
+  height: 96px;
+  background-image: url(../img/icons/socials-02-ig.svg);
+  font-size: 37px;
+  padding-left: 5px;
+}
+.contacts-box .socials .youtube {
+  width: 84px;
+  height: 79px;
+  background-image: url(../img/icons/socials-03-yt.svg);
+  font-size: 32px;
+}
+.contacts-box .socials .facebook {
+  width: 82px;
+  height: 81px;
+  background-image: url(../img/icons/socials-04-fb.svg);
+  font-size: 39px;
+}
+.contacts-box .socials a i {
+  color: var(--bs-primary);
+  line-height: 1;
 }
 .content-banner {
   position: relative;
