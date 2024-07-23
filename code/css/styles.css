@@ -1963,8 +1963,9 @@ textarea.form-control {
 /* details-banner */
 .details-banner {
   position: relative;
-  height: 679px;
-  margin: 0 0 -506px;
+  min-height: 679px;
+  margin: 0 0 -173px;
+  padding: 173px 0;
 }
 .details-banner:before {
   content: "";
@@ -1985,6 +1986,7 @@ textarea.form-control {
 .details-banner .container-fluid {
   position: relative;
   z-index: 1001;
+  max-width: 830px;
 }
 
 /* icons-list */
@@ -2602,9 +2604,6 @@ textarea.form-control {
 .details-intro p {
   margin: 0 0 24px;
   line-height: 23px;
-}
-.details-intro figure {
-  margin: 30px 0 0;
 }
 .details-intro figure img {
   display: block;

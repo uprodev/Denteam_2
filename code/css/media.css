@@ -1204,9 +1204,6 @@
   .details-intro {
     z-index: 1001 !important;
   }
-  .details-intro figure {
-    margin: 83px 0 0;
-  }
   .details-intro figure figcaption {
     padding: 37px 0 0;
   }
