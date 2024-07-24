@@ -1964,7 +1964,6 @@ textarea.form-control {
 .details-banner {
   position: relative;
   min-height: 679px;
-  margin: 0 0 -173px;
   padding: 173px 0;
 }
 .details-banner:before {
@@ -2659,6 +2658,18 @@ textarea.form-control {
   box-shadow: none;
   object-fit: contain;
 }
+
+.details {
+  padding: 50px 0 0;
+}
+.details.overlap-top {
+  padding: 0;
+  margin: -173px 0 0;
+}
+.details.overlap-top .details-content:first-child {
+  position: relative;
+  z-index: 1000;
+}
 .details-content figure {
   margin: 3rem 0;
 }
@@ -2674,6 +2685,11 @@ textarea.form-control {
   font-style: italic;
   padding: 25px 0 0;
   text-align: center;
+}
+.details-content .cards-list-01,
+.details-content .cards-list-02 {
+  padding: 100px 0;
+  margin: 0;
 }
 
 /* vacancy-details */
