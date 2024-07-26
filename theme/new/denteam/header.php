@@ -14,7 +14,7 @@
 
   <?php the_field('body_code_h', 'option') ?>
 
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="scroll-container" data-scroll-container>
     <header class="header">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">

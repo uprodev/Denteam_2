@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="tpl-page-details-behandeling">
+<div class="tpl-page-details-details-01">
 
 	<?php if ( have_posts() ) :
 

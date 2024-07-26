@@ -193,6 +193,14 @@
   .cta-help + .cards-list-02 {
     padding: 47px 0 0;
   }
+  .details-content:not(.block-wide) .cta-help-inner {
+    padding: 0 0 0 50px;
+  }
+
+  .details-content .cards-list .cards-slider {
+    padding: 0;
+    margin: 0;
+  }
 
   .cta-contacts {
     background: none;
@@ -356,7 +364,7 @@
   .denteam-card {
     margin: 0 -30px;
   }
-  .contact-cards .container-fluid:before {
+  .contact-cards .contact-cards-wrapper .container-fluid:before {
     right: 30px;
   }
 }
@@ -817,7 +825,7 @@
     height: 100%;
     margin: 0;
   }
-  .contact-cards .container-fluid:before {
+  .contact-cards .contact-cards-wrapper .container-fluid:before {
     right: 100px;
     left: 100px;
     top: 50px;
@@ -1204,9 +1212,6 @@
   .details-intro {
     z-index: 1001 !important;
   }
-  .details-intro figure {
-    margin: 83px 0 0;
-  }
   .details-intro figure figcaption {
     padding: 37px 0 0;
   }
@@ -1225,15 +1230,14 @@
   .details-content figure figcaption {
     padding: 35px 0 0;
   }
-  .details-content figure.image-wide {
+  .details-content.block-wide {
     width: 80vw;
     max-width: 1170px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin: 3.4rem 0 2rem;
   }
-  .details-content figure.image-wide figcaption {
+  .details-content.block-wide figcaption {
     padding: 15px 0 0;
   }
 
@@ -1514,10 +1518,6 @@
     background-image: url(../img/bgi/DT_Triangle_01_header.svg), url(../img/bgi/DT_Triangle_02_header.svg), linear-gradient(to right, rgb(244, 240, 234) 0%, rgba(244, 240, 234, 0.9) 40%, rgba(244, 240, 234, 0) 100%);
     background-size: auto;
     background-position: 0 0, 160px 0, 0 0;
-  }
-
-  .contact-cards {
-    margin: 21px 0 70px;
   }
 
   .links-grid .wrapper {
@@ -1912,6 +1912,13 @@
     padding: 0 0 14px;
   }
 
+  .details-content:not(.block-wide) .cta-help-inner {
+    padding: 0 50px;
+  }
+  .details-content:not(.block-wide) .image {
+    margin: 0 50px 0 0;
+  }
+
   .cards-list .cta-contacts .cta-contacts-inner {
     padding: 20px 23px 20px 50px;
   }
@@ -2185,6 +2192,7 @@
     width: 61px;
     height: 61px;
     margin-right: 31px;
+    font-size: 26px;
   }
   .contacts-box .contacts-list a strong {
     margin: 0 0 -4px;
@@ -2281,10 +2289,14 @@
     max-width: 29em;
   }
 
-  .contact-cards .container-fluid > div {
+  .contact-cards {
+    padding: 21px 0 98px;
+    margin: 0 0 70px;
+  }
+  .contact-cards .contact-cards-wrapper .container-fluid > div {
     position: static;
   }
-  .contact-cards .container-fluid::before {
+  .contact-cards .contact-cards-wrapper .container-fluid::before {
     right: 110px;
     left: 135px;
     top: 20px;
@@ -2295,7 +2307,7 @@
   }
 
   .text-columns {
-    padding: 50px 0 98px;
+    padding: 120px 0 0;
   }
 
   .list-cards-icons {
@@ -2537,10 +2549,13 @@
   }
   .bg-bot-white:after {
     height: 365px;
-  }
-  .bg-bot-white:after {
     bottom: -300px;
   }
+
+  .contact-cards:before {
+    height: 70px;
+  }
+
   .container-fluid > div {
     position: relative;
     z-index: 1;
@@ -2691,7 +2706,7 @@
 
   .tpl-page-details .details {
     position: relative;
-    margin: 0 0 101px;
+    margin-bottom: 101px;
   }
   .tpl-page-details .details:before {
     content: "";

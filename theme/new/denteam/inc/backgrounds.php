@@ -1,0 +1,1 @@
+<?php if($main_background == 'Grey') echo ' bg-light'; if($background_top == 'Grey') echo ' bg-top-light bg-bot-white'; if($background_bottom == 'Grey') echo ' bg-bot-light bg-top-white';

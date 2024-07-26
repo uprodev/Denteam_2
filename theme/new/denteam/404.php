@@ -4,11 +4,11 @@
 	<section class="page-banner page-banner--image-right">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6 align-self-center">
+				<div class="col-md-6">
 					<div class="page-banner-text">
 
 						<?php if ($field = get_field('title_404', 'option')): ?>
-							<h1><?= $field ?></h1>
+							<h1 class="h2"><?= $field ?></h1>
 						<?php endif ?>
 
 						<?php if ($field = get_field('description_404', 'option')): ?>
