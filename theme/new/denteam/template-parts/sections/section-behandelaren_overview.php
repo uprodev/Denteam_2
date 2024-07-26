@@ -29,7 +29,7 @@ if($args):
 
 						<?php 
 						$args = array(
-							'post_type' => 'behandeling', 
+							'post_type' => 'behandelaar', 
 							'posts_per_page' => 8,
 							'post_status' => 'publish',
 							'post__in' => wp_list_pluck($default, 'ID'),
