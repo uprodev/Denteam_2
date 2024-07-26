@@ -421,21 +421,24 @@ button {
   --bs-card-border-radius: 25px;
   --bs-card-height: 100%;
   --bs-card-color: var(--bs-body-color);
+  display: block;
   position: relative;
   border-radius: var(--bs-card-border-radius);
+  text-decoration: none;
 }
 .card .card-link {
   position: absolute;
   bottom: 0;
   right: 0;
   transform: translate3d(36%, 39%, 0);
+  transition: all 0.2s;
 }
 .card .card-link img {
   width: 100%;
   height: auto;
   display: block;
 }
-.card .card-link:hover {
+.card:hover .card-link {
   right: -10px;
 }
 
@@ -650,6 +653,8 @@ button {
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   display: none;
+  opacity: 0;
+  transition: all 0.3s;
 }
 .contact-block-fixed .btn-close {
   width: 20px;
@@ -1916,7 +1921,7 @@ textarea.form-control {
 }
 .denteam-card .form-controls .btn-form-prev {
   color: #fff;
-  margin-left: 28px;
+  margin-right: 28px;
   letter-spacing: 0.2em;
 }
 .denteam-card .form-controls .btn-form-prev:focus {
@@ -2848,20 +2853,19 @@ textarea.form-control {
 }
 .contacts-box .contacts-list a strong {
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.2em;
-  font-family: "arciform";
 }
 .contacts-box address {
   margin: 0 0 20px;
-  font-family: "Open Sans";
+  /* font-family: "Open Sans"; */
   font-weight: 300;
 }
 .contacts-box address strong {
   font-weight: 700;
 }
 .contacts-box .account-data {
-  font-family: "Open Sans";
+  /* font-family: "Open Sans"; */
   font-weight: 300;
 }
 .contacts-box .account-data strong {
@@ -2888,8 +2892,7 @@ textarea.form-control {
 .contacts-box .socials .h4 {
   opacity: 0.73;
   margin: 0 0 10px;
-  font-family: "arciform";
-  font-weight: 400;
+  font-weight: 500;
 }
 .contacts-box .socials ul {
   padding: 0;
@@ -3334,6 +3337,20 @@ textarea.form-control {
 
 .tpl-page-details-01 .page-banner.page-banner--img {
   margin: 0 0 50px;
+}
+
+.tpl-page-short .page-banner {
+  min-height: calc(100vh - 87px);
+  display: flex;
+}
+
+.tpl-page-short .page-banner .container-fluid {
+  display: flex;
+}
+
+.tpl-page-short .page-banner .row {
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* End Pages

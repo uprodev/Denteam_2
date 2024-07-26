@@ -507,7 +507,6 @@
     width: 50vw;
     min-width: 50vw;
     height: 100%;
-    max-height: 700px;
     object-fit: cover;
   }
 
@@ -879,6 +878,10 @@
   .content-banner {
     margin: 30px 0 0;
   }
+
+  .tpl-page-short .page-banner .row {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -915,6 +918,12 @@
     z-index: 998;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
     height: 116px;
+    transform: translateY(-100%);
+  }
+  .header-fixed.header-fixed-top {
+    z-index: 1001;
+    transform: translateY(0);
+    transition: transform 0.3s;
   }
   .header-fixed .navbar-brand img {
     width: 170px;
@@ -1520,6 +1529,20 @@
     background-position: 0 0, 160px 0, 0 0;
   }
 
+  .page-banner.page-banner--gradient-img:after {
+    content: "";
+    background-color: var(--bs-light);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+  }
+  .page-banner.page-banner--gradient-img .page-banner-bg {
+    z-index: 998;
+  }
+
   .links-grid .wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1564,6 +1587,10 @@
   }
   .team-wrapper .denteam-card h2 {
     max-width: none;
+  }
+
+  .tpl-page-short .page-banner {
+    min-height: 100vh;
   }
 }
 
@@ -1980,6 +2007,9 @@
     height: 685px;
     display: flex;
     align-items: center;
+  }
+  .tpl-page-short .page-banner {
+    align-items: unset;
   }
   .page-banner .page-banner-text h1 {
     margin: 0 0 22px;
