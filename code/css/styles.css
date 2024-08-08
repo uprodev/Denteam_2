@@ -411,6 +411,9 @@ button {
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #f9d480;
 }
+.swiper-slide {
+  height: auto;
+}
 
 /* cards */
 .card {
@@ -1256,11 +1259,11 @@ textarea.form-control {
   color: var(--bs-primary);
 }
 
-.footer .f-nav ul li:last-child a {
+.footer .f-nav ul li.has-arrow a {
   position: relative;
   padding-left: 29px;
 }
-.footer .f-nav ul li:last-child a:before {
+.footer .f-nav ul li.has-arrow a:before {
   content: "\f061";
   position: absolute;
   left: 0px;
@@ -1270,7 +1273,7 @@ textarea.form-control {
   color: var(--bs-primary);
   transition: all 0.3s ease-in-out;
 }
-.footer .f-nav ul li:last-child a:hover:before {
+.footer .f-nav ul li.has-arrow a:hover:before {
   transform: translateX(3px);
 }
 
@@ -2343,7 +2346,7 @@ textarea.form-control {
   z-index: 2;
 }
 .text-with-image {
-  padding: 0 0 60px;
+  padding: 30px 0;
 }
 .text-with-image:first-child {
   padding-top: 60px;
