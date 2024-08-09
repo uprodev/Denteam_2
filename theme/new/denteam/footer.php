@@ -121,7 +121,7 @@
                         <?php while( have_rows('menu_items') ): the_row(); ?>
 
                           <?php if ($field = get_sub_field('link')): ?>
-                            <li>
+                            <li<?php if(get_sub_field('is_arrow')) echo ' class="has-arrow"' ?>>
                               <a href="<?= $field['url'] ?>"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
                             </li>
                           <?php endif ?>
@@ -154,7 +154,7 @@
                         <?php while( have_rows('menu_items') ): the_row(); ?>
 
                           <?php if ($field = get_sub_field('link')): ?>
-                            <li>
+                            <li<?php if(get_sub_field('is_arrow')) echo ' class="has-arrow"' ?>>
                               <a href="<?= $field['url'] ?>"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
                             </li>
                           <?php endif ?>
@@ -187,7 +187,7 @@
                         <?php while( have_rows('menu_items') ): the_row(); ?>
 
                           <?php if ($field = get_sub_field('link')): ?>
-                            <li>
+                            <li<?php if(get_sub_field('is_arrow')) echo ' class="has-arrow"' ?>>
                               <a href="<?= $field['url'] ?>"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
                             </li>
                           <?php endif ?>

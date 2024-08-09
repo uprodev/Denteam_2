@@ -14,28 +14,29 @@ if($args):
 
 			<?php if ($title): ?>
 				<div class="text-center">
-					<h2 class="h3"><?= $title ?></h2>
+					<h2 class="h4"><?= $title ?></h2>
 				</div>
 			<?php endif ?>
 			
-			<div class="row gy-5">
+			<div class="cards-slider">
+				<div class="swiper-wrapper">
 
-				<?php if($is_default): ?>
+					<?php if($is_default): ?>
 
-					<?php foreach($default as $post): 
+						<?php foreach($default as $post): 
 
-						global $post;
-						setup_postdata($post); ?>
-						<div class="col-md-6 col-lg-4">
-							<?php get_template_part('parts/content', $template_part) ?>
-						</div>
-					<?php endforeach; ?>
-					<?php wp_reset_postdata(); ?>
+							global $post;
+							setup_postdata($post); ?>
+							<div class="swiper-slide">
+								<?php get_template_part('parts/content', $template_part, ['subtitle' => get_post_type()]) ?>
+							</div>
+						<?php endforeach; ?>
+						<?php wp_reset_postdata(); ?>
 
-				<?php else: ?>
+					<?php else: ?>
 
-					<?php foreach ($custom as $item): ?>
-						
+						<?php foreach ($custom as $item): ?>
+							
 							<?php 
 							$image = $item['image'] ?: '';
 							$subtitle = $item['subtitle'] ?: '';
@@ -45,18 +46,20 @@ if($args):
 							$link_target = $item['link'] && $item['link']['target'] ? true : false;
 							?>
 
-						<div class="col-md-6 col-lg-4">
-							<?php get_template_part('parts/content', $template_part, ['is_custom' => true, 'image' => $image, 'subtitle' => $subtitle, 'title' => $title, 'url' => $link_url, 'target' => $link_target]) ?>
-						</div>
-					<?php endforeach ?>
+							<div class="swiper-slide">
+								<?php get_template_part('parts/content', $template_part, ['is_custom' => true, 'image' => $image, 'subtitle' => $subtitle, 'title' => $title, 'url' => $link_url, 'target' => $link_target]) ?>
+							</div>
+						<?php endforeach ?>
 
-				<?php endif; ?>
+					<?php endif; ?>
 
+				</div>
+				<div class="swiper-pagination"></div>
 			</div>
 
 			<?php if ($link): ?>
-				<div class="text-center mt-8">
-					<a href="<?= $link['url'] ?>" class="content-link content-link-sm"<?php if($link['target']) echo ' target="_blank"' ?>><?= $link['title'] ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/triangle.svg" alt="" /></a>
+				<div class="text-center d-none d-lg-block">
+					<a href="<?= $link['url'] ?>" class="content-link"<?php if($link['target']) echo ' target="_blank"' ?>><?= $link['title'] ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/triangle.svg" alt="" /></a>
 				</div>
 			<?php endif ?>
 			

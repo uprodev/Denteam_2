@@ -3,7 +3,7 @@ if($args):
 	foreach($args as $key=>$arg) $$key = $arg; ?>
 
 	<section class="stories"<?php if($id) echo ' id="' . $id . '"' ?>>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="stories-slider">
 				<div class="swiper-wrapper">
 

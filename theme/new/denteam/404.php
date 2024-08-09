@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="tpl-page-short">
+<div<?php if(get_field('height_404', 'option') == 'Full') echo ' class="tpl-page-short"' ?>>
 	<section class="page-banner page-banner--image-right">
 		<div class="container-fluid">
 			<div class="row">

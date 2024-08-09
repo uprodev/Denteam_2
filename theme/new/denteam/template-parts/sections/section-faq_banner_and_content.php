@@ -18,8 +18,8 @@ if($args):
 				</div>
 
 				<?php if ($is_filter_options): ?>
-					<div class="col-md-6 col-xl-5">
-						<div class="page-banner-cta">
+					<div class="col-md-6 col-xl-5<?php if($is_dropdown_align) echo ' align-self-end' ?>">
+						<div class="page-banner-cta<?php if($is_dropdown_align) echo ' p-0' ?>">
 
 							<?php if ($filter_options_title): ?>
 								<div class="text-primary">

@@ -5,24 +5,30 @@ if($args):
         <div class="top-content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 col-left">
+                    <div class="col-lg-6">
                         <?php if($image): ?>
                             <figure>
                                 <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>">
                             </figure>
                         <?php endif; ?>
                     </div>
-                    <div class="col-lg-6 col-right">
+                    <div class="col-lg-6">
                         <div class="inner-content">
+
                             <?php if($title): ?>
-                                <h2 class="h1 section-title"><?= $title; ?></h2>
+                                <h2 class="h1"><?= $title; ?></h2>
                             <?php endif; ?>
+
                             <?php if($description): ?>
                                 <div class="description"><?= $description; ?></div>
                             <?php endif; ?>
+
                             <?php if($quicklinks):?>
+
                                 <ul class="quicklinks">
+
                                     <?php foreach($quicklinks as $link): ?>
+
                                     <?php 
                                         if( $link ) {
                                             // var_dump($link);
@@ -32,8 +38,8 @@ if($args):
                                         }
                                     ?>
                                         <?php if($link ): ?>
-                                            <li class="quicklink">
-                                                <a class='link' href='<?php echo esc_url($link_url); ?>' target='<?php echo esc_attr($link_target); ?>'><?php echo esc_html($link_title); ?></a>
+                                            <li>
+                                                <a href='<?php echo esc_url($link_url); ?>' target='<?php echo esc_attr($link_target); ?>'><?php echo esc_html($link_title); ?></a>
                                             </li>
                                         <?php endif; ?>
                                     <?php endforeach; ?>

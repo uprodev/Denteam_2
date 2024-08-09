@@ -4,7 +4,7 @@ $title = $is_custom && $args['title'] ? $args['title'] : get_the_title();
 $url = $is_custom && $args['url'] ? $args['url'] : get_the_permalink();
 ?>
 
-<div class="card card-type-02">
+<a href="<?= $url ?>" class="card card-type-02"<?php if($is_custom && $args['target']) echo ' target="_blank"' ?>>
 
 	<?php if ($is_custom && $args['image']): ?>
 		<?= wp_get_attachment_image($args['image']['ID'], 'full', false, array('class' => 'card-img')) ?>
@@ -15,10 +15,9 @@ $url = $is_custom && $args['url'] ? $args['url'] : get_the_permalink();
 	<?php endif ?>
 	
 	<div class="card-img-overlay">
-
 		<h5 class="card-subtitle">
 
-			<?php if ($is_custom && $args['subtitle']): ?>
+			<?php if ($args['subtitle']): ?>
 				<?= $args['subtitle'] ?>
 			<?php else: ?>
 
@@ -31,10 +30,9 @@ $url = $is_custom && $args['url'] ? $args['url'] : get_the_permalink();
 			<?php endif ?>
 
 		</h5>
-
 		<h3 class="card-title"><?= $title ?></h3>
 	</div>
-	<a href="<?= $url ?>" class="card-link"<?php if($is_custom && $args['target']) echo ' target="_blank"' ?>>
+	<span class="card-link">
 		<img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-right.svg" alt="" />
-	</a>
-</div>
+	</span>
+</a>

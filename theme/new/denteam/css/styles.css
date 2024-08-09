@@ -230,13 +230,15 @@ button {
   text-transform: uppercase;
   max-width: 100%;
   transition: all 0.2s;
+  height: auto !important;
+  min-height: 45px;
 }
 .btn span {
   display: block;
-  height: 1.5em;
+  /* height: 1.5em;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; */
 }
 .btn.btn-primary {
   font-size: 20px;
@@ -411,6 +413,9 @@ button {
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #f9d480;
 }
+.swiper-slide {
+  height: auto;
+}
 
 /* cards */
 .card {
@@ -421,21 +426,24 @@ button {
   --bs-card-border-radius: 25px;
   --bs-card-height: 100%;
   --bs-card-color: var(--bs-body-color);
+  display: block;
   position: relative;
   border-radius: var(--bs-card-border-radius);
+  text-decoration: none;
 }
 .card .card-link {
   position: absolute;
   bottom: 0;
   right: 0;
   transform: translate3d(36%, 39%, 0);
+  transition: all 0.2s;
 }
 .card .card-link img {
   width: 100%;
   height: auto;
   display: block;
 }
-.card .card-link:hover {
+.card:hover .card-link {
   right: -10px;
 }
 
@@ -650,6 +658,8 @@ button {
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
   display: none;
+  opacity: 0;
+  transition: all 0.3s;
 }
 .contact-block-fixed .btn-close {
   width: 20px;
@@ -1251,11 +1261,11 @@ textarea.form-control {
   color: var(--bs-primary);
 }
 
-.footer .f-nav ul li:last-child a {
+.footer .f-nav ul li.has-arrow a {
   position: relative;
   padding-left: 29px;
 }
-.footer .f-nav ul li:last-child a:before {
+.footer .f-nav ul li.has-arrow a:before {
   content: "\f061";
   position: absolute;
   left: 0px;
@@ -1265,7 +1275,7 @@ textarea.form-control {
   color: var(--bs-primary);
   transition: all 0.3s ease-in-out;
 }
-.footer .f-nav ul li:last-child a:hover:before {
+.footer .f-nav ul li.has-arrow a:hover:before {
   transform: translateX(3px);
 }
 
@@ -1916,7 +1926,7 @@ textarea.form-control {
 }
 .denteam-card .form-controls .btn-form-prev {
   color: #fff;
-  margin-left: 28px;
+  margin-right: 28px;
   letter-spacing: 0.2em;
 }
 .denteam-card .form-controls .btn-form-prev:focus {
@@ -2338,7 +2348,7 @@ textarea.form-control {
   z-index: 2;
 }
 .text-with-image {
-  padding: 0 0 60px;
+  padding: 30px 0;
 }
 .text-with-image:first-child {
   padding-top: 60px;
@@ -2848,20 +2858,19 @@ textarea.form-control {
 }
 .contacts-box .contacts-list a strong {
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.2em;
-  font-family: "arciform";
 }
 .contacts-box address {
   margin: 0 0 20px;
-  font-family: "Open Sans";
+  /* font-family: "Open Sans"; */
   font-weight: 300;
 }
 .contacts-box address strong {
   font-weight: 700;
 }
 .contacts-box .account-data {
-  font-family: "Open Sans";
+  /* font-family: "Open Sans"; */
   font-weight: 300;
 }
 .contacts-box .account-data strong {
@@ -2888,8 +2897,7 @@ textarea.form-control {
 .contacts-box .socials .h4 {
   opacity: 0.73;
   margin: 0 0 10px;
-  font-family: "arciform";
-  font-weight: 400;
+  font-weight: 500;
 }
 .contacts-box .socials ul {
   padding: 0;
@@ -3294,11 +3302,26 @@ textarea.form-control {
 }
 .page-banner.page-banner--img .page-banner-image {
   margin: 30px 0 -30px;
+  max-width: 574px;
+}
+.page-banner.page-banner--img .page-banner-image figure {
+  position: relative;
+  padding-top: 84.7%;
 }
 .page-banner.page-banner--img .page-banner-image img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask: url(../img/bgi/mask-right.png) 0 0 / cover no-repeat;
+}
+.tpl-page-overview .page-banner.page-banner--img .page-banner-image figure {
+  padding-top: 97%;
+}
+.tpl-page-overview .page-banner.page-banner--img .page-banner-image img {
+  mask-image: url(../img/bgi/mask-left.png);
 }
 
 .tpl-page-home {
@@ -3334,6 +3357,20 @@ textarea.form-control {
 
 .tpl-page-details-01 .page-banner.page-banner--img {
   margin: 0 0 50px;
+}
+
+.tpl-page-short .page-banner {
+  min-height: calc(100vh - 87px);
+  display: flex;
+}
+
+.tpl-page-short .page-banner .container-fluid {
+  display: flex;
+}
+
+.tpl-page-short .page-banner .row {
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* End Pages
