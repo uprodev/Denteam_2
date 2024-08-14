@@ -2079,7 +2079,7 @@
     padding-top: 147px;
   }
   .text-with-image:not(.text-with-image--bg):first-child {
-    padding-top: 40px;
+    padding-top: 100px;
   }
   .text-with-image:last-child {
     padding-bottom: 135px;
@@ -2452,6 +2452,10 @@
   .text-with-slider .text h3 {
     padding: 38px 0 0;
     margin: 0 0 12px;
+  }
+
+  .block-text-simple {
+    padding: 200px 0 50px;
   }
 }
 

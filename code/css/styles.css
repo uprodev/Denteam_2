@@ -3266,6 +3266,11 @@ textarea.form-control {
   margin: 24px 0 0;
 }
 
+/* block-text-simple */
+.block-text-simple {
+  padding: 150px 0 50px;
+}
+
 /* End Page sections
 --------------------------------------------------------------------------------------------------*/
 
