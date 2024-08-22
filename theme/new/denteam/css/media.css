@@ -1374,6 +1374,7 @@
 
   .denteam-card .form-wrapper {
     height: 100%;
+    min-height: 350px;
     padding: 23px 0 0;
   }
   .denteam-card .form-wrapper .wpcf7-response-output {
@@ -2079,7 +2080,7 @@
     padding-top: 147px;
   }
   .text-with-image:not(.text-with-image--bg):first-child {
-    padding-top: 40px;
+    padding-top: 100px;
   }
   .text-with-image:last-child {
     padding-bottom: 135px;
@@ -2452,6 +2453,10 @@
   .text-with-slider .text h3 {
     padding: 38px 0 0;
     margin: 0 0 12px;
+  }
+
+  .block-text-simple {
+    padding: 200px 0 50px;
   }
 }
 
@@ -2870,7 +2875,7 @@
   }
 
   .tpl-page-details-01 .text-with-image-wrapper {
-    margin: 182px 0 119px;
+    margin: 0 0 119px;
   }
   .tpl-page-details-01 .text-with-image:first-child {
     padding-top: 140px;

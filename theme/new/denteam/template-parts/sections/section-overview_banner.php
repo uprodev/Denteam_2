@@ -84,10 +84,13 @@ if($args):
 					<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
 						<div class="col-md-6 col-lg-4">
-							<?php get_template_part('parts/content', 'about_us', ['subtitle' => $custom_post_type]) ?>
+							<?php 
+							$subtitle = get_field('card_subtitle') ?: $custom_post_type;
+							get_template_part('parts/content', 'about_us', ['subtitle' => $subtitle]);
+							?>
 						</div>
 
-						<?php if ($cards['is_cta_block'] && $wp_query->current_post == 1): ?>
+						<?php if ($cards['is_cta_block'] && $wp_query->current_post == 2): ?>
 
 							<?php if ($cards['cta_block'] == 'Custom CTA block with form'): ?>
 								<section class="cta-contacts">

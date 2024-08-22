@@ -622,3 +622,10 @@ function register_post_types(){
 	] );
 
 }
+
+
+add_action('init', 'add_categories_to_custom_post_type');
+function add_categories_to_custom_post_type() {
+    register_taxonomy_for_object_type('category', 'news');
+    register_taxonomy_for_object_type('post_tag', 'news');
+}

@@ -28,7 +28,9 @@ if($args):
 				<?php if ($image): ?>
 					<div class="col-lg-6">
 						<div class="page-banner-image">
-							<?= wp_get_attachment_image($image['ID'], 'full') ?>
+							<figure>
+								<?= wp_get_attachment_image($image['ID'], 'full') ?>
+							</figure>
 						</div>
 					</div>
 				<?php endif ?>

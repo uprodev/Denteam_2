@@ -2,9 +2,9 @@
 if($args):
 	foreach($args as $key=>$arg) $$key = $arg; ?>
 
+	<?php if ($is_cards && is_array($cards) && checkArrayForValues($cards)): ?>
 	<section class="contact-cards<?php require_once(get_template_directory() . '/inc/backgrounds.php') ?>"<?php if($id) echo ' id="' . $id . '"' ?>>
 
-		<?php if ($is_cards && is_array($cards) && checkArrayForValues($cards)): ?>
 		<div class="container-fluid">
 			<div class="row">
 
@@ -31,9 +31,9 @@ if($args):
 				
 			</div>
 		</div>
-	<?php endif ?>
-	
-</section>
+	</section>
+<?php endif ?>
+
 <section class="text-columns bg-light">
 	<div class="container-fluid">
 		<div class="row">

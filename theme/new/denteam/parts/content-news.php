@@ -21,7 +21,7 @@ $url = $is_custom && $args['url'] ? $args['url'] : get_the_permalink();
 				<?= $args['subtitle'] ?>
 			<?php else: ?>
 
-				<?php $terms = wp_get_object_terms(get_the_ID(), 'news_cat') ?>
+				<?php $terms = wp_get_object_terms(get_the_ID(), 'category') ?>
 
 				<?php if ($terms): ?>
 					<?= $terms[0]->name ?>

@@ -13,7 +13,7 @@ if($args):
 
 		<div class="container-fluid">
 			<div class="cards-slider">
-				<div class="swiper-wrapper">
+				<div class="swiper-wrapper tttt">
 
 					<?php if ($show_posts == 'Custom'): ?>
 						<?php

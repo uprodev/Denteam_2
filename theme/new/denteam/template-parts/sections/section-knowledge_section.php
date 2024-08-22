@@ -87,7 +87,7 @@ if($args):
 						'terms' => $_GET['news_cat'],
 					),
 				);
-				$wp_query = new WP_Query(array('post_type' => 'news', 'posts_per_page' => 9, 'paged' => get_query_var('paged'), 'post_status'=> 'publish', 'suppress_filters'=>false, 'orderby'=> 'menu_order', 'order'=>'ASC', 'tax_query'=>$tax_query));
+				$wp_query = new WP_Query(array('post_type' => 'news', 'posts_per_page' => 9, 'paged' => get_query_var('paged'), 'post_status'=> 'publish', 'suppress_filters'=>false, /*'orderby'=> 'menu_order', 'order'=>'ASC',*/ 'tax_query'=>$tax_query));
 
 				$i = 1;
 				while ($wp_query->have_posts()): $wp_query->the_post(); 
