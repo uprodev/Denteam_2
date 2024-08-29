@@ -1,4 +1,4 @@
-  <?php if (($form = get_field('form_contact_element', 'option')) && (get_field('is_footer_contact_section') || is_404())): ?>
+  <?php if (($form = get_field('form_contact_element', 'option')) && (get_field('is_footer_contact_section') || is_404() || is_home())): ?>
   <section class="cta-contacts">
     <div class="container-fluid">
       <div class="cta-contacts-inner">
@@ -240,13 +240,23 @@
 </footer>
 
 <?php 
-$fields = ['image', 'text', 'link'];
-foreach ($fields as $field) {
-  $$field = get_field('sticky_card_image')['custom_default'] == 'Custom' ? get_field('sticky_card_image')[$field] : get_field($field . '_fixed', 'option');
+$stickyCustomDefault = get_field('sticky_card_image')['custom_default'];
+if($stickyCustomDefault == "Custom") {
+  $image = get_field('sticky_card_image')['image'];
+  $title = get_field('sticky_card_image')['text'];
+  $link = get_field('sticky_card_image')['link'];
+} else {
+  $image = get_field('image_fixed', 'option');
+  $title = get_field('title_fixed', 'option');
+  $link = get_field('link_fixed', 'option');
 }
+// $fields = ['image', 'text', 'link'];
+// foreach ($fields as $field) {
+//   $$field = get_field('sticky_card_image')['custom_default'] == 'Custom' ? get_field('sticky_card_image')[$field] : get_field($field . '_fixed', 'option');
+// }
 ?>
 
-<?php if ($link && get_field('sticky_card_image')['is_load']): ?>
+<?php if ($link && !get_field('sticky_card_image')['is_load']): ?>
   <div class="contact-block-fixed">
     <button type="button" class="btn-close"></button>
     <a href="<?= $link['url'] ?>"<?php if($link['target']) echo ' target="_blank"' ?>>
@@ -257,12 +267,11 @@ foreach ($fields as $field) {
         </figure>
       <?php endif ?>
 
-      <h4><?= $link['title'] ?> ?></h4>
-
       <?php if ($title): ?>
-        <div class="subtitle"><?= $title ?></div>
+        <h4><?= $title ?></h4>
       <?php endif ?>
 
+      <div class="subtitle"><?= $link['title'] ?></div>
     </a>
   </div>
 <?php endif ?>

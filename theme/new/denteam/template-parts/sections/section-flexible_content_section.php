@@ -3,12 +3,12 @@ if($args):
 	foreach($args as $key=>$arg) $$key = $arg; ?>
 	<?php /*var_dump($args)*/ ?>
 
-	<section class="details-banner"<?php if($id) echo ' id="' . $id . '"' ?>>
+	<!-- <section class="details-banner">
 		<div class="banner-element-left d-none d-xl-block"><img src="<?= get_stylesheet_directory_uri() ?>/img/banner-element-left.svg" alt="" /></div>
 		<div class="banner-element-right d-none d-xl-block"><img src="<?= get_stylesheet_directory_uri() ?>/img/banner-element-right-01.svg" alt="" /></div>
-	</section>
+	</section> -->
 
-	<section class="details">
+	<section class="details"<?php if($id) echo ' id="' . $id . '"' ?>>
 		<div class="container-fluid">
 			
 			<?php if ( have_posts() ) :

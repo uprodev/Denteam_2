@@ -1,7 +1,7 @@
 <?php 
 $is_custom = isset($args['is_custom']) && $args['is_custom'];
 $title = $is_custom && $args['title'] ? $args['title'] : get_the_title();
-$subtitle = $is_custom && $args['subtitle'] ? $args['subtitle'] : (get_field('function') ?: '');
+$subtitle = $args['subtitle'] ?: (get_field('function') ?: '');
 $text = $is_custom && $args['text'] ? $args['text'] : get_the_excerpt();
 $url = $is_custom && $args['url'] ? $args['url'] : get_the_permalink();
 ?>

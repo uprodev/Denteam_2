@@ -3,7 +3,7 @@ if($args):
 	foreach($args as $key=>$arg) $$key = $arg; ?>
 
     <?php if ($title || $description || $contact_image || $contact_title || $telephone || $email || $form_select): ?>
-        <section class="contact-info-form-section 
+        <section <?php if($id) echo ' id="' . $id . '"' ?> class="contact-info-form-section 
             <?php 
                 if(isset($background_color)) echo $background_color; 
                 if(isset($background_color_top)) echo  ' ' . $background_color_top; 
@@ -11,7 +11,7 @@ if($args):
                 if(isset($spacing_top) && ($spacing_top == true)) echo ' pt-0';
                 if(isset($spacing_bot) && ($spacing_bot == true)) echo ' pb-0';
             ?> 
-        "<?php if($id) echo ' id="' . $id . '"' ?>>
+        ">
 
             <!-- Denteam form -->
             <div class="container-fluid">

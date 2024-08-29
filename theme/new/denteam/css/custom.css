@@ -1,0 +1,179 @@
+/* Custom CSS */
+
+.headline.text-white a {
+    color: #000;
+}
+
+.single-behandelaar .page-banner.page-banner--img .page-banner-image {
+    margin-bottom: 0px;
+}
+
+.single-behandelaar .page-banner.page-banner--img .page-banner-image figure {
+    margin-bottom: 0px;
+}
+
+.single-behandelaar .page-banner.page-banner--img .page-banner-image figure img {
+    mask: unset;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.text-with-image .image>img {
+    max-height: 100%;
+}
+
+.navbar-brand img {
+    max-width: 200px !important;
+}
+
+.swiper-slide .story-item figure img {
+    border-radius: 12px;
+}
+
+section.cta-contacts {
+    z-index: 999;
+}
+
+section.cta-contacts .cta-contacts-inner div.image {
+    max-height: 250px;
+    height: 225%;
+}
+
+section.cta-contacts .cta-contacts-inner div.image img {
+    max-height: 100%;
+    position: relative;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cards-list a.card-img-overlay {
+    text-decoration: none;
+}
+
+.tpl-page-overview .card.card-type-02 .card-subtitle {
+    font-family: "Poppins", sans-serif;
+}
+
+.story-item .name { margin-top: 25px; }
+.story-item a.content-link { margin-top: 10px; }
+
+
+@media screen and (min-width: 1200px) {
+    .story-item .name {
+        font-size: 25px;
+    }
+    .text-with-headline.text-with-headline--faq .headline:before {
+        left: -118px;
+    }
+}
+
+.denteam-card.normal-form,
+.denteam-card.normal-form .form-wrapper,
+.denteam-card.normal-form .form-wrapper .wpcf7,
+.denteam-card.normal-form .form-wrapper form {
+    height: auto;
+    min-height: auto;
+}
+@media screen and (min-width: 1200px) {
+    .denteam-card.normal-form {
+        padding: 50px 8.7%;
+    }
+}
+
+section.team-wrapper .container-fluid .row.gy-7 {
+    margin-top: 0px;
+}
+
+
+/* Form */
+section.contact-info-form-section form textarea {
+    height: 130px;
+    border-radius: 3px;
+    border-style: none;
+    padding: 10px;
+    width: 100%;
+}
+form .normal-checkbox.wpcf7-checkbox span.wpcf7-list-item { display: block; }
+form .normal-checkbox.wpcf7-checkbox span.wpcf7-list-item input[type="checkbox"] { border-radius: 0px; }
+
+.denteam-card.normal-form form .wpcf7-form-control.wpcf7-acceptance .wpcf7-list-item-label a {
+    color: #FFF;
+}
+
+/* --------------------------------------------------------- */
+/* Spacing */
+section.stories { /* height: auto; min-height: auto; padding-top: 50px; padding-bottom: 50px; */ }
+@media screen and (max-width: 991px) { 
+    section.stories { min-height: auto; padding-top: 100px; padding-bottom: 100px; }  
+}
+
+section.text-with-headline {
+    /* min-height: 200px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px; */
+}
+section.text-columns.bg-light { padding-bottom: 100px; }
+.single section.team-wrapper { margin-bottom: 0px; }
+
+
+
+section.page-banner + section.text-with-headline { margin-top: -100px; }
+
+section.text-with-headline:not(.text-with-headline--faq) + section.text-with-image-wrapper { margin-top: 0px; }
+section.text-with-headline:not(.text-with-headline--faq) + section.list-cards-icons { padding-top: 0px; }
+
+/* section.text-with-image-wrapper + section.stories, */
+section.text-with-image-wrapper + section.team-wrapper { padding-top: 0px; }
+section.text-with-image-wrapper + section.team-wrapper { margin-top: 0px; }
+
+
+section.team-wrapper + section.list-cards-icons { padding-top: 0px; }
+section.team-wrapper + section.text-with-image-wrapper { margin-top: 0px; }
+
+/* Spacing forms e.d. */
+@media screen and (min-width: 992px) {
+    section.page-banner.page-banner--img + section.text-columns.bg-light {
+        margin-top: -150px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    section.text-with-image-wrapper+section.text-with-headline.text-with-headline--faq {
+        margin-top: -100px;
+        margin-bottom: 100px;
+        min-height: 300px;
+    }
+
+    .stories .container-fluid:before {
+        left: 7%;
+        top: 50%;
+        transform: translateY(-52.5%);
+        width: 100%;
+        content: '';
+        background: url('../img/bgi/bg-stories.svg');
+        height: 220%;
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: contain;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.stories { margin-bottom: 30px; }
+    .stories .container-fluid:before {
+        position: absolute;
+        left: -3%;
+        top: 50%;
+        transform: translateY(-52.5%);
+        width: 100%;
+        content: '';
+        background: url('../img/bgi/bg-stories.svg');
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: contain;
+    }
+}
+
+/* --------------------------------------------------------- */

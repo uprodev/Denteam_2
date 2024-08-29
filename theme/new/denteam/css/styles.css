@@ -1967,6 +1967,9 @@ textarea.form-control {
 .denteam-card .col-right .contact-info {
   display: flex;
 }
+.denteam-card .wpcf7-form .wpcf7-submit {
+  align-self: flex-start;
+}
 
 /* /contact-info-form-section */
 
@@ -2387,6 +2390,16 @@ textarea.form-control {
   display: block;
   max-width: 50%;
   height: auto;
+}
+.text-with-image .text ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.text-with-image .text ul li {
+  background: url(../img/icons/ico-check.svg) 0 4px no-repeat;
+  padding: 0 0 0 30px;
+  margin: 0 0 16px;
 }
 
 .steps {
@@ -3266,6 +3279,11 @@ textarea.form-control {
   margin: 24px 0 0;
 }
 
+/* block-text-simple */
+.block-text-simple {
+  padding: 150px 0 50px;
+}
+
 /* End Page sections
 --------------------------------------------------------------------------------------------------*/
 
@@ -3398,4 +3416,10 @@ textarea.form-control {
   display: block;
   position: relative;
   z-index: 2;
+}
+
+img.attachment-full.size-full {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

@@ -4,7 +4,7 @@ if($args):
 
 	<section class="contact-info-form-section bg-light bg-top-white bg-bot-white pb-0"<?php if($id) echo ' id="' . $id . '"' ?>>
 		<div class="container-fluid">
-			<div class="denteam-card">
+			<div class="denteam-card <?php if($form_type == 'Normal') echo 'normal-form' ; ?>">
 				<div class="row">
 					<div class="col-lg-5">
 
@@ -59,9 +59,12 @@ if($args):
 
 			<?php if ($form): ?>
 				<div class="col-lg-7 ps-xl-0">
-					<div class="form-wrapper" data-step="1">
+					<div class="form-wrapper" <?php if($form_type != 'Normal') echo ' data-step="1"' ?>>
+						<?php if($form_type != 'Normal'): ?>
 						<div class="form-step-num"><span id="formStepInd" data-step="1"></span>/3</div>
 						<div class="form-step-progress"><span></span></div>
+						<?php endif; ?>
+
 						<?= do_shortcode('[contact-form-7 id="' . $form . '"]') ?>
 					</div>
 				</div>

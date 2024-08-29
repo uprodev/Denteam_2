@@ -312,7 +312,10 @@ function more_posts () {
 			$query->the_post(); ?>
 
 			<div class="col-md-6 col-lg-4">
-				<?php get_template_part('parts/content', 'about_us', ['subtitle' => $custom_post_type]) ?>
+				<?php 
+				$subtitle = get_field('card_subtitle') ?: $custom_post_type;
+				get_template_part('parts/content', 'about_us', ['subtitle' => $subtitle]);
+				?>
 			</div>
 
 		<?php }
