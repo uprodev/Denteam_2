@@ -1041,6 +1041,11 @@
     transition: none;
     opacity: 1;
   }
+  .navbar-collapse .inner {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+  }
   .navbar-nav .nav-item {
     margin: 0;
   }
@@ -1374,6 +1379,7 @@
 
   .denteam-card .form-wrapper {
     height: 100%;
+    min-height: 350px;
     padding: 23px 0 0;
   }
   .denteam-card .form-wrapper .wpcf7-response-output {
@@ -2874,7 +2880,7 @@
   }
 
   .tpl-page-details-01 .text-with-image-wrapper {
-    margin: 182px 0 119px;
+    margin: 0 0 119px;
   }
   .tpl-page-details-01 .text-with-image:first-child {
     padding-top: 140px;
