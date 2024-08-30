@@ -1041,6 +1041,11 @@
     transition: none;
     opacity: 1;
   }
+  .navbar-collapse .inner {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+  }
   .navbar-nav .nav-item {
     margin: 0;
   }
@@ -1100,6 +1105,9 @@
   }
   .navbar-nav .dropdown[data-bs-hover] .dropdown-menu li {
     margin: 0 0 20px;
+  }
+  .navbar-nav .dropdown .dropdown-menu {
+    min-width: 300px;
   }
 
   .header-languages {

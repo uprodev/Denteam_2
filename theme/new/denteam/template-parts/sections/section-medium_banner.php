@@ -35,8 +35,8 @@ if($args):
 			</div>
 		</div>
 
-		<?php if (get_field('wrap_class') != 'short'): ?>
-			<button class="scroll-bottom"><?php _e('Look', 'Denteam') ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-down-gray.svg" alt="" /> <?php _e('further', 'Denteam') ?></button>
+		<?php if ($scroll_down_button && $scroll_down_link): ?>
+			<button data-section="<?= $scroll_down_link['url'] ?>" class="scroll-bottom"><?= $text_before_link ?> <img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-down-gray.svg" alt="" /> <?= $text_after_link ?></button>
 		<?php endif ?>
 		
 	</section>

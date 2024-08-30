@@ -2,7 +2,8 @@
 if($args):
 	foreach($args as $key=>$arg) $$key = $arg; ?>
 
-	<section class="contact-info-form-section bg-light bg-bot-white mb-xl-6<?php require_once(get_template_directory() . '/inc/backgrounds.php') ?>"<?php if($id) echo ' id="' . $id . '"' ?>>
+	<section class="contact-info-form-section bg-bot-white mb-xl-6<?php require_once(get_template_directory() . '/inc/backgrounds.php') ?>"<?php if($id) echo ' id="' . $id . '"' ?>>
+	<!-- BG light standard removed -->
 		<div class="container-fluid">
 
 			<?php if ($image): ?>

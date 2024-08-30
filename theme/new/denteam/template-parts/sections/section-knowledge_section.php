@@ -29,7 +29,7 @@ if($args):
 						
 						<?php 
 						$terms = get_terms( [
-							'taxonomy' => 'news_cat',
+							'taxonomy' => 'category',
 							// 'hide_empty' => false,
 						] );
 						?>
@@ -74,20 +74,20 @@ if($args):
 	</section>
 
 	<section class="cards-list cards-list-02">
-		<div class="container-fluid">
-			<div class="row gy-4" id="response_news">
+		<div class="container-fluid" id="response_news">
+			<div class="row gy-4" id="response_more_news">
 				
 				<?php 
 				$tax_query = array();
 				if(isset($_GET['news_cat']))
 				$tax_query = array(
 					array(
-						'taxonomy' => 'news_cat',
+						'taxonomy' => 'category',
 						'field' => 'slug',
 						'terms' => $_GET['news_cat'],
 					),
 				);
-				$wp_query = new WP_Query(array('post_type' => 'news', 'posts_per_page' => 9, 'paged' => get_query_var('paged'), 'post_status'=> 'publish', 'suppress_filters'=>false, /*'orderby'=> 'menu_order', 'order'=>'ASC',*/ 'tax_query'=>$tax_query));
+				$wp_query = new WP_Query(array('post_type' => 'news', 'posts_per_page' => 9, 'post_status' => 'publish', 'paged' => get_query_var('paged'), 'post_status'=> 'publish', 'suppress_filters'=>false, /*'orderby'=> 'menu_order', 'order'=>'ASC',*/ 'tax_query'=>$tax_query));
 
 				$i = 1;
 				while ($wp_query->have_posts()): $wp_query->the_post(); 

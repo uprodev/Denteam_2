@@ -23,7 +23,7 @@ if($args):
 
 							</ul>
 							<div class="d-none d-md-block">
-								<a href="#" class="content-link steps-slider-next"><?php _e('NEXT STEP', 'Denteam') ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/triangle.svg" alt="" /></a>
+								<a href="#" class="content-link steps-slider-next"><?php _e('Volgende', 'Denteam') ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/triangle.svg" alt="" /></a>
 							</div>
 						</div>
 					</div>

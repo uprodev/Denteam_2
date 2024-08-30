@@ -3,7 +3,7 @@ if($args):
 	foreach($args as $key=>$arg) $$key = $arg; ?>
 
 	<?php if ($is_cards && is_array($cards) && checkArrayForValues($cards)): ?>
-	<section class="contact-cards<?php require_once(get_template_directory() . '/inc/backgrounds.php') ?>"<?php if($id) echo ' id="' . $id . '"' ?>>
+	<section class="contact-cards<?php require_once(get_template_directory() . '/inc/backgrounds.php') ?>"<?php if($is_cards && $id) echo ' id="' . $id . '"' ?>>
 
 		<div class="container-fluid">
 			<div class="row">
@@ -34,7 +34,7 @@ if($args):
 	</section>
 <?php endif ?>
 
-<section class="text-columns bg-light">
+<section class="text-columns bg-light"<?php if(!$is_cards && $id) echo ' id="' . $id . '"' ?>>
 	<div class="container-fluid">
 		<div class="row">
 

@@ -65,13 +65,13 @@ if($args):
 
 						<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 							<div class="col-sm-6 col-md-4 col-lg-3">
-								<?php get_template_part('parts/content', 'team') ?>
+								<?php get_template_part('parts/content', 'team', ['link_text' => $link_text]) ?>
 							</div>
 						<?php endwhile; ?>
 
 					</div>
 
-					<?php if ($index == 0 && is_array($cta_block) && checkArrayForValues($cta_block)): ?>
+					<?php if ($is_cta_block && $index == 0 && is_array($cta_block) && checkArrayForValues($cta_block)): ?>
 					<div class="denteam-card">
 						<div class="row justify-content-between">
 							<div class="col-left">

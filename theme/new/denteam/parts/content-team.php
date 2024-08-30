@@ -2,6 +2,7 @@
 $is_custom = isset($args['is_custom']) && $args['is_custom'];
 $title = $is_custom && $args['name'] ? $args['name'] : (get_the_title() ?: '');
 $function = $is_custom && $args['function'] ? $args['function'] : (get_field('function') ?: '');
+$link_text = isset($args['link_text']) ? $args['link_text'] : '';
 ?>
 
 <div class="team-item">
@@ -25,6 +26,6 @@ $function = $is_custom && $args['function'] ? $args['function'] : (get_field('fu
 			<p><?= $function ?></p>
 		<?php endif ?>
 		
-		<a href="<?= $is_custom && $args['url'] ? $args['url'] : get_the_permalink() ?>" class="content-link content-link-sm"<?php if($is_custom && $args['target']) echo ' target="_blank"' ?>><?= $is_custom && $args['title'] ? $args['title'] : __('Meer lezen', 'Denteam') ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/triangle.svg" alt="" /></a>
+		<a href="<?= $is_custom && $args['url'] ? $args['url'] : get_the_permalink() ?>" class="content-link content-link-sm"<?php if($is_custom && $args['target']) echo ' target="_blank"' ?>><?= $link_text ?: __('Meer lezen', 'Denteam') ?><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/triangle.svg" alt="" /></a>
 	</div>
 </div>

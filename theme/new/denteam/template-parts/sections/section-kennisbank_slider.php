@@ -39,8 +39,12 @@ if($args):
 
 							<?= $text ?>
 
-							<?php if ($field = get_field('button')): ?>
-								<a href="<?= $field['url'] ?>" class="btn btn-primary"<?php if($field['target']) echo ' target="_blank"' ?>><span><?= $field['title'] ?></span><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" /></a>
+							<?php // if ($field = get_field('button')): ?>
+								<!-- <a href="<?php // echo $field['url'] ?>" class="btn btn-primary"<?php // if($field['target']) echo ' target="_blank"' ?>><span><?php //echo $field['title'] ?></span><img src="<?php //echo get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" /></a> -->
+							<?php //endif ?>
+
+							<?php if ($button): ?>
+								<a href="<?= $button['url'] ?>" class="btn btn-primary"<?php if($button['target']) echo ' target="_blank"' ?>><span><?= $button['title'] ?></span><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" /></a>
 							<?php endif ?>
 
 						</div>

@@ -50,6 +50,11 @@ if($args):
 				</div>
 			</div>
 		</div>
+
+		<?php if ($scroll_down_button && $scroll_down_link): ?>
+			<button data-section="<?= $scroll_down_link['url'] ?>" class="scroll-bottom"><?= $text_before_link ?> <img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-down-gray.svg" alt="" /> <?= $text_after_link ?></button>
+		<?php endif ?>
+		
 	</section>
 
 	<?php if ($usps_list): ?>

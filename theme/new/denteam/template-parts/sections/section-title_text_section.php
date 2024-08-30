@@ -22,7 +22,8 @@ if($args):
 						<?php endif ?>
 						
 						<?php if ($link): ?>
-							<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="<?= $link['url'] ?>"><span><?= $link['title'] ?></span><img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" /></button>
+							<!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="<?php //echo $link['url'] ?>"><span><?php //echo $link['title'] ?></span><img src="<?php //echo get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" /></button> -->
+							<a class="btn btn-primary" target="<?= $link['target'] ?: '' ?>" href="<?= $link['url'] ?: '' ; ?>"><span><?= $link['title'] ?: '' ; ?></span><img src="<?php echo get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" /></a>
 						<?php endif ?>
 
 					</div>

@@ -23,10 +23,26 @@ if($args):
 					</div>
 				<?php endif ?>
 
-				<div class="row gy-7" id="response_team">
+
+				<!-- Check if count is less then 3 -->
+				<?php $itemCount = 4; ?>
+				<?php 
+				if ($is_default) {
+					if (!empty($default) && is_countable($default)) {
+						$defaultCount = count($default);
+						$itemCount = $defaultCount;
+					}	
+				} else {
+					if (!empty($custom) && is_countable($custom)) {
+						$customCount = count($custom);
+						$itemCount = $customCount;
+					}	
+				}
+				?>
+
+				<div class="row gy-7 <?= ($itemCount < 4) ? 'few-items' : '' ; ?>" id="response_team">
 
 					<?php if ($is_default): ?>
-
 						<?php 
 						$args = array(
 							'post_type' => 'behandelaar', 
