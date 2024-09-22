@@ -141,6 +141,7 @@ function filter_news(){
 
 	$args = array(
 		'post_type' => 'news',
+		'post_status' => 'publish',
 		'posts_per_page' => 9,
 	);
 
@@ -148,7 +149,7 @@ function filter_news(){
 	if(isset($_GET['news_cat']))
 		$args['tax_query'] = array(
 			array(
-				'taxonomy' => 'news_cat',
+				'taxonomy' => 'category',
 				'field' => 'slug',
 				'terms' => $_GET['news_cat'],
 			),
@@ -157,26 +158,31 @@ function filter_news(){
 	$query = new WP_Query( $args );
 
 	if( $query->have_posts() ) :
-		$i = 1;
-		while( $query->have_posts() ): $query->the_post(); ?>
+		$i = 1; ?>
 
-			<div class="col-md-6 col-lg-4">
-				<?php get_template_part('parts/content', 'news'); ?>
-			</div>
+		<div class="row gy-4" id="response_more_news">
 
-			<?php if ($i == 6): ?>
-				<div class="col-12">
-					<?php get_template_part('parts/cta_contacts'); ?>
+			<?php while( $query->have_posts() ): $query->the_post(); ?>
+
+				<div class="col-md-6 col-lg-4">
+					<?php get_template_part('parts/content', 'news'); ?>
 				</div>
-			<?php endif ?>
-			
-			<?php $i++;
-		endwhile;
-		wp_reset_postdata(); ?>
+
+				<?php if ($i == 6): ?>
+					<div class="col-12">
+						<?php get_template_part('parts/cta_contacts'); ?>
+					</div>
+				<?php endif ?>
+
+				<?php $i++;
+			endwhile;
+			wp_reset_postdata(); ?>
+
+		</div>
 
 		<?php if ( $query->max_num_pages > 1 ) { ?>
-			<div class="text-center mt-6 btn_more_news_wrap">
-				
+			<div class="text-center mt-8 btn_more_news_wrap">
+
 				<script> var this_page = 1; </script>
 
 				<a class="content-link btn_more_news" href="#"
@@ -294,7 +300,7 @@ function filter_by_term(){
 		<?php endif;?>
 
 	<?php endif ?>
-	
+
 	<?php 
 
 	die();

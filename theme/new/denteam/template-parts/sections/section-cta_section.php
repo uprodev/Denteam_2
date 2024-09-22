@@ -21,12 +21,20 @@ if($args):
 					<?php if ($description): ?>
 						<p><?= $description ?></p>
 					<?php endif ?>
-					
+
+					<!-- #applyModal for popup -->
 					<?php if ($link): ?>
+						<?php if ($popup_btn): ?>
+							<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">
+								<span><?= $link['title'] ?></span>
+								<img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" />
+							</button>
+						<?php else: ?>
 						<a href="<?= $link['url'] ?>" class="btn btn-primary"<?php if($link['target']) echo ' target="_blank"' ?>>
 							<span><?= $link['title'] ?></span>
 							<img src="<?= get_stylesheet_directory_uri() ?>/img/icons/arrow-btn.svg" alt="" />
 						</a>
+						<?php endif; ?>
 					<?php endif ?>
 
 				</div>

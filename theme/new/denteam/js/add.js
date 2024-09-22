@@ -181,7 +181,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success:function(data){
 				if (data) {
-					$('#response_news').append(data); 
+					$('#response_more_news').append(data); 
 					this_page++;                      
 					if (this_page == _this.attr('data-max-pages')) {
 						$('.btn_more_news_wrap').remove();               

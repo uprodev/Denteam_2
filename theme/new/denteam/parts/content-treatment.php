@@ -7,7 +7,7 @@
 	<?php endif ?>
 	
 	<div class="card-body">
-		<div class="subtitle"><?php _e('BEHANDELING', 'Denteam') ?></div>
+		<div class="subtitle"><?= get_field('card_subtitle') ?: __('BEHANDELING', 'Denteam') ?></div>
 		<h4 class="title"><?php the_title() ?></h4>
 		<?php if (get_field('short_description')): ?>
 			<?php $description = get_field('short_description'); ?>
