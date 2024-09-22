@@ -307,6 +307,18 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $("#navbarContent").on("shown.bs.collapse", function () {
+    const scrollY = $(window).scrollTop();
+    $("body").css({ position: "fixed", top: -scrollY });
+    $("html").addClass("hide-scroll");
+  });
+  $("#navbarContent").on("hide.bs.collapse", function () {
+    const scrollY = document.body.style.top;
+    $("body").css({ position: "initial", top: 0 });
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    $("html").removeClass("hide-scroll");
+  });
+
   // hide contact block
 
   if (elementInViewport(document.querySelector(".footer"))) {
@@ -329,6 +341,8 @@ jQuery(document).ready(function ($) {
     bannerHeight = $(".details-banner").outerHeight();
   } else if ($(".page-banner").length) {
     bannerHeight = $(".page-banner").outerHeight();
+  } else if ($(".main-banner-single").length) {
+    bannerHeight = $(".main-banner-single").outerHeight();
   } else {
     bannerHeight = $(".header").outerHeight();
   }

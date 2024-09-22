@@ -1106,6 +1106,9 @@
   .navbar-nav .dropdown[data-bs-hover] .dropdown-menu li {
     margin: 0 0 20px;
   }
+  .navbar-nav .dropdown .dropdown-menu {
+    min-width: 300px;
+  }
 
   .header-languages {
     margin: 0 20px;

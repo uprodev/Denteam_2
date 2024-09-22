@@ -121,10 +121,23 @@ html,
 body {
   scroll-behavior: unset !important;
 }
+.hide-scroll {
+  scrollbar-width: none;
+  height: 100%;
+}
+.hide-scroll::-webkit-scrollbar {
+  display: block;
+}
+.hide-scroll body {
+  height: 100%;
+  overflow: hidden;
+}
+
 .page-wrapper {
   width: 100%;
   overflow: hidden;
 }
+
 .container-fluid {
   max-width: 1230px;
   padding: 0 15px;
@@ -987,7 +1000,7 @@ textarea.form-control {
   bottom: 87px;
   height: calc(100% - 87px);
   background-color: #fff;
-  padding: 127px 43px 21px;
+  padding: 127px 0 21px;
   transition: all 0.3s linear;
   height: 0;
   opacity: 0.8;
@@ -1013,6 +1026,7 @@ textarea.form-control {
   width: 100%;
   max-height: 100%;
   overflow: auto;
+  padding: 0 43px;
 }
 
 .navbar-nav {
@@ -1054,6 +1068,7 @@ textarea.form-control {
 .navbar-nav .dropdown .dropdown-menu .dropdown-item {
   color: var(--bs-primary);
   padding: 0.865rem 1.5rem;
+  white-space: initial;
 }
 
 .navbar-nav .dropdown[data-bs-hover] {
@@ -3428,4 +3443,11 @@ img.attachment-full.size-full {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.modal-backdrop {
+  z-index: 99998;
+}
+.modal {
+  z-index: 99999;
 }
